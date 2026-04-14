@@ -1,0 +1,35 @@
+model:
+  backbone: "sentence-transformers/all-mpnet-base-v2"
+  projection_hidden_dim: 256
+
+training:
+  seed: 42
+  epochs: 15
+  batch_size: 32
+  learning_rate: 2.0e-5
+  samples_per_epoch: 32
+  eval_every: 1
+
+loss:
+  contrastive_temperature: 0.07
+  alignment_weight: 0.5
+
+fusion:
+  full_text_weight: 0.5
+  theme_weight: 0.1
+  plot_weight: 0.2
+  outcome_weight: 0.2
+
+data:
+  narrative_file: "data/llm_extracted/merged_narratives.json"
+  track_a_file: "data/raw/dev_track_a.jsonl"
+  test_narrative: "data/llm_extracted/test_narratives.json"
+
+output:
+  output_dir: "checkpoints/track_b_multiview"
+  submit_file: "track_b.npy"
+
+wandb:
+  enabled: false
+  project: "semeval-multiview"
+  entity: "22520010-uit"

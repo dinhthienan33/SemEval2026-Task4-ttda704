@@ -1,0 +1,34 @@
+model:
+  backbone: "sentence-transformers/all-MiniLM-L6-v2"
+  dropout: 0.1
+  pooling: "mean"
+  gradient_checkpointing: true
+
+training:
+  seed: 42
+  num_epochs: 20
+  batch_size: 8
+  lr: 2.0e-5
+  weight_decay: 0.01
+  warmup_steps: 100
+  patience: 5
+  max_len: 512
+
+loss:
+  type: "adaptive_triplet"
+  base_margin: 0.3
+  max_margin: 1.5
+
+data:
+  dataset_id: "dinhthienan33/semeval-2026-task-4-track-b"
+  path_train: "data/raw/synthetic_cleaned.jsonl"
+  path_dev: "data/raw/dev_track_a.jsonl"
+  path_test: "data/raw/dev_track_b.jsonl"
+
+output:
+  output_dir: "checkpoints/track_a"
+
+wandb:
+  enabled: false
+  project: "semeval-track-b-improved-v2"
+  entity: "22520010-uit"

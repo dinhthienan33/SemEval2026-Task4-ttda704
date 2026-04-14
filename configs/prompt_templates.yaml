@@ -1,0 +1,71 @@
+narrative_elements:
+  characters:
+    features:
+      - role
+      - backstory
+      - strengths
+      - weaknesses
+      - psychology
+      - beliefs
+      - motivations
+      - social_dynamics
+      - arc
+    weight: 0.25
+
+  plot:
+    features:
+      - protagonist_intro
+      - inciting_incident
+      - rising_action
+      - climax
+      - resolution
+      - consequences
+      - final_outcome
+      - loose_ends
+      - subplots
+    weight: 0.25
+
+  setting:
+    features:
+      - time_period
+      - geographical_location
+      - cultural_context
+      - social_class
+      - ideology_and_beliefs
+      - economic_and_political_context
+      - historical_events
+      - physical_environment
+      - technological_level
+    weight: 0.25
+
+  themes:
+    features:
+      - main_theme
+      - secondary_themes
+      - tertiary_themes
+      - resolution_main_theme
+      - resolution_secondary_themes
+      - resolution_tertiary_themes
+    weight: 0.25
+
+extraction_prompt: |
+  ###PERSONA:
+  You are a world-famous narratologist and successful film scriptwriter.
+
+  ###TEXT:
+  {text}
+
+  ###INSTRUCTIONS:
+  Analyze the provided text and extract specific narrative elements.
+  Your goal is to deconstruct the story into a structured JSON format.
+  Think about the subtext, not just the surface details.
+
+  1. **Characters**: Identify main and supporting characters. Analyze their roles, archetypes, and hidden motivations.
+  2. **Plot**: Break down the narrative arc (Setup, Inciting Incident, Rising Action, Climax, Resolution).
+  3. **Setting**: Describe both the physical location and the atmosphere/time period.
+  4. **Themes**: Identify the Primary Theme (the main message) and any Tertiary Themes (subtle motifs or symbols).
+
+api:
+  model: "gpt-4o-mini"
+  temperature: 0.7
+  max_text_length: 3000

@@ -1,0 +1,58 @@
+# =============================================
+# SemEval 2026 Task 4 - .gitignore
+# =============================================
+
+data/
+dataset/
+*.jsonl
+*.json
+!package.json
+!tsconfig.json
+
+# ----- Model weights & checkpoints -----
+checkpoints/
+hf_model_*/
+multiview_model_path*/
+setfit_model_*/
+adapter-weights/
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.onnx
+*.h5
+
+# ----- Large binary artifacts -----
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.zip
+
+# ----- Cache / logs / runtime -----
+__pycache__/
+*.pyc
+wandb/
+cache_narrative*/
+output_final/
+
+# ----- Draft folder (local experiments, not for public) -----
+draft/
+docs/
+# ----- Environment & IDE -----
+.env
+.vscode/
+.kaggle/
+
+# ----- Keep these explicitly -----
+!README.md
+!requirements.txt
+!**/*.md
+!**/*.yaml
+!**/*.yml
+!**/*.py
+!**/*.sh
+!**/*.tex
+!**/*.bst
+!**/*.sty
+!**/*.bib

@@ -1,0 +1,20 @@
+# Requirements for semeval-track-b script
+# Adjust torch installation for your CUDA / CPU setup. Example: for CPU-only installs use `pip install torch --index-url https://download.pytorch.org/whl/cpu`.
+torch>=2.0.0
+transformers>=4.41.1
+optimum
+# sentence-transformers>=2.2.0
+tqdm>=4.64.0
+numpy>=1.23.0
+wandb>=0.15.0
+kagglehub>=0.2.0
+pyyaml>=6.0
+huggingface-hub>=0.13.4
+pyarrow>=21.0.0
+pydantic<2.12,>=2.0
+accelerate>=0.18.0
+
+# Optional (only if you plan to use additional HF tooling)
+datasets
+scikit-learn
+sentence-transformers==5.2.0
