@@ -2,7 +2,6 @@
 # SemEval 2026 Task 4 - .gitignore
 # =============================================
 
-data/
 dataset/
 *.jsonl
 *.json
@@ -56,3 +55,4 @@ docs/
 !**/*.bst
 !**/*.sty
 !**/*.bib
+!data/**
