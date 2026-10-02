@@ -37,7 +37,10 @@ output_final/
 
 # ----- Draft folder (local experiments, not for public) -----
 draft/
-docs/
+docs/*
+!docs/assets/
+docs/assets/*
+!docs/assets/card.png
 # ----- Environment & IDE -----
 .env
 .vscode/
